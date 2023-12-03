@@ -48,7 +48,7 @@ const Signup = () => {
             name: name,
             email: email,
         }
-        axios.post(`http://localhost:5000/register`, user)
+        axios.post(`https://twitterclone-backend-i0ms.onrender.com/register`, user)
         console.log(user)
     };
 

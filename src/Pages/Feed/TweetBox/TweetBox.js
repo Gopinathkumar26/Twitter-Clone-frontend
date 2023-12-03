@@ -43,7 +43,7 @@ function TweetBox() {
         e.preventDefault();
         // console.log(user)
         if (user?.providerData[0]?.providerId === 'password') {
-            fetch(`http://localhost:5000/loggedInUser?email=${email}`)
+            fetch(`https://twitterclone-backend-i0ms.onrender.com/loggedInUser?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     setName(data[0]?.name)
@@ -67,7 +67,7 @@ function TweetBox() {
             //   console.log(userPost);
             setPost('')
             setImageURL('')
-            fetch(`http://localhost:5000/post`, {
+            fetch(`https://twitterclone-backend-i0ms.onrender.com/post`, {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

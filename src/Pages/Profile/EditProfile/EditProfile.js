@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
 import Modal from '@mui/material/Modal';
-import { Avatar } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import './EditProfile.css';
@@ -81,7 +80,7 @@ export default function EditProfile({ user, loggedInUser }) {
     }
     console.log(editedInfo);
     if (editedInfo) {
-      await axios.patch(`http://localhost:5000/userUpdates/${user?.email}`, editedInfo)
+      await axios.patch(`https://twitterclone-backend-i0ms.onrender.com/userUpdates/${user?.email}`, editedInfo)
       setOpen(false)
     }
   }

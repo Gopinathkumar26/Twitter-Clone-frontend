@@ -20,7 +20,7 @@ const MainPage = ({ user }) => {
   const username = user?.email?.split('@')[0];
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userPost?email=${user?.email}`)
+    fetch(`https://twitterclone-backend-i0ms.onrender.com/userPost?email=${user?.email}`)
       .then(res => res.json())
       .then(data => {
         setPosts(data);
@@ -44,7 +44,7 @@ const MainPage = ({ user }) => {
         setIsLoading(false)
 
         if (url) {
-          axios.patch(`http://localhost:5000/userUpdates/${user?.email}`, userCoverImage)
+          axios.patch(`https://twitterclone-backend-i0ms.onrender.com/userUpdates/${user?.email}`, userCoverImage)
         }
       })
   }
@@ -63,7 +63,7 @@ const MainPage = ({ user }) => {
         }
         setIsLoading(false)
         if (url) {
-          axios.patch(`http://localhost:5000/userUpdates/${user?.email}`, userProfileImage)
+          axios.patch(`https://twitterclone-backend-i0ms.onrender.com/userUpdates/${user?.email}`, userProfileImage)
         }
       })
   }
