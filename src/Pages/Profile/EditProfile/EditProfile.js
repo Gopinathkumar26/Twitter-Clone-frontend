@@ -94,7 +94,7 @@ export default function EditProfile({ user, loggedInUser }) {
         aria-describedby="modal-modal-description">
         <Box sx={style} className="modal">
           <div className='header'>
-            <IconButton onClick={() => { setOpen(false); }} ><CloseIcon /></IconButton>
+            <IconButton style={{float:"right"}} onClick={() => { setOpen(false); }} ><CloseIcon /></IconButton>
             <h2 className='header-title'> Edit Profile</h2>
             <button className='save-btn' onClick={HandleSave}>Save</button>
           </div>

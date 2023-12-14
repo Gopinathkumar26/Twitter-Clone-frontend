@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import twitterImage from '../../assets/image/twitter.jpeg';
+//import twitterImage from '../../assets/image/twitter.jpeg';
+import TwitterImage from '../../assets/image/xtwitter.jpg';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import GoogleButton from "react-google-button";
@@ -7,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from '../../firebase.init';
 import axios from "axios";
 import './Login.css';
+import LoginOtp from './LoginOtp';
 
 const Signup = () => {
     const [username, setUsername] = useState('');
@@ -55,13 +57,13 @@ const Signup = () => {
     return (
         <div className='login-container'>
             <div className='image-container'>
-                <img className='image' src={twitterImage} alt='' />
+                <img className='image' src={TwitterImage} alt='' />
             </div>
             <div className='form-container'>
                 <div>
-                    <TwitterIcon className='Twitter-img' style={{ color: "skyblue" }} />
-                    <h2 className='heading'>Happening now</h2>
-                    <h3 className='heading1'>Join twitter today</h3>
+                    {/* <TwitterIcon className='Twitter-img' style={{ color: "skyblue" }} /> */}
+                    <h2 className='heading'>Happening now!</h2>
+                    {/* <h3 className='heading1'>Join twitter today</h3> */}
                     <form onSubmit={handleSubmit}>
                         <input type='text'
                             className='display-name'
@@ -92,9 +94,11 @@ const Signup = () => {
                         </div>
                     </form>
                 </div>
-                <hr />
+                <hr style={{marginRight:"80px"}} />
+                <LoginOtp/>
                 <div className='google-button'>
-                    <GoogleButton className='g-btn' type='light' onClick={handleGoogleSignIn} />
+                    {/* <GoogleButton className='g-btn' type='light' onClick={handleGoogleSignIn} /> */}
+                    <button className='g-btn' onClick={handleGoogleSignIn}>Sign in with Google</button>
                 </div>
                 <div>
                     Already have an account?

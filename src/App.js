@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Login/Signup";
@@ -14,30 +14,32 @@ import Messages from "./Pages/Messages/Messages";
 import More from "./Pages/More/More";
 import Notifications from "./Pages/Notifications/Notifications";
 import Profile from "./Pages/Profile/Profile";
+import LoginOtp from "./Pages/Login/LoginOtp";
 
 function App() {
   return (
     <div className="">
       <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}>
-          <Route index element={<Feed/>}/>
-        </Route>
-        <Route path="/home" element={<ProtectedRoute><Home/></ProtectedRoute>}>
-        <Route path="feed" element={<Feed/>}/>
-        <Route path="explore" element={<Explore/>}/>
-        <Route path="bookmarks" element={<Bookmarks/>}/>
-        <Route path="lists" element={<Lists/>}/>
-        <Route path="messages" element={<Messages/>}/>
-        <Route path="more" element={<More/>}/>
-        <Route path="notifications" element={<Notifications/>}/>
-        <Route path="profile" element={<Profile/>}/>
-        </Route>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<Signup/>}/>
-        <Route path="/page-loading" element={<PageLoading/>}/>
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>}>
+            <Route index element={<Feed />} />
+          </Route>
+          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>}>
+            <Route path="feed" element={<Feed />} />
+            <Route path="explore" element={<Explore />} />
+            <Route path="bookmarks" element={<Bookmarks />} />
+            <Route path="lists" element={<Lists />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="more" element={<More />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="profile" element={<Profile />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/loginotp" element={<LoginOtp />} />
+          <Route path="/page-loading" element={<PageLoading />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
